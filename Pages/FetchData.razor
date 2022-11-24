@@ -49,32 +49,44 @@ else
 }
 
 @code {
-    private IGetUsersStartingWith_Users[]? _users;
+    private User[]? _users;
 
     protected override async Task OnInitializedAsync()
     {
         var result = await AdminClient.GetUsersStartingWith.ExecuteAsync("S");
-        _users = result.Data?.Users.ToArray();
+        _users = result.Data?.Users
+            .Select(x => new User
+            {
+                Id = x.Id,
+                FirstName = x.FirstName,
+                Email = x.Email,
+                Active = x.Active,
+                Admin = x.Admin
+            })
+            .ToArray();
     }
 
     private async Task ToggleAdmin(int userId, bool currentAdmin)
     {
         var result = await AdminClient.SetUserAdmin.ExecuteAsync(userId, !currentAdmin);
         if (result.Data?.UserAdminSet.User is null) return;
-        var index = Array.FindIndex(_users!, x => x.Id == userId);
-        var curUser = _users![index];
-        _users[index] = new GetUsersStartingWith_Users_User(curUser.Id, curUser.FirstName, curUser.Email, 
-            curUser.Active, result.Data.UserAdminSet.User.Admin);
+        _users!.First(x => x.Id == userId).Admin = result.Data.UserAdminSet.User.Admin;
     }
 
     private async Task ToggleActive(int userId, bool currentActive)
     {
         var result = await AdminClient.SetUserActive.ExecuteAsync(userId, !currentActive);
         if (result.Data?.UserActiveSet.User is null) return;
-        var index = Array.FindIndex(_users!, x => x.Id == userId);
-        var curUser = _users![index];
-        _users[index] = new GetUsersStartingWith_Users_User(curUser.Id, curUser.FirstName, curUser.Email, 
-            result.Data.UserActiveSet.User.Active, curUser.Admin);
+        _users!.First(x => x.Id == userId).Active = result.Data.UserActiveSet.User.Active;
+    }
+
+    private class User
+    {
+        public int Id { get; init; }
+        public required string FirstName { get; init; }
+        public required string Email { get; init; }
+        public bool Active { get; set; }
+        public bool Admin { get; set; }
     }
 
 }
