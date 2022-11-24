@@ -447,6 +447,256 @@ namespace BlazorApp1
     /// GraphQL mutations.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.15.2.0")]
+    public partial class SetUserActiveResult : global::System.IEquatable<SetUserActiveResult>, ISetUserActiveResult
+    {
+        public SetUserActiveResult(global::BlazorApp1.ISetUserActive_UserActiveSet userActiveSet)
+        {
+            UserActiveSet = userActiveSet;
+        }
+
+        /// <summary>
+        /// Activate/deactivate user with provided user ID.
+        /// 
+        /// 
+        /// **Returns:**
+        /// Updated user.
+        /// </summary>
+        public global::BlazorApp1.ISetUserActive_UserActiveSet UserActiveSet { get; }
+
+        public virtual global::System.Boolean Equals(SetUserActiveResult? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (UserActiveSet.Equals(other.UserActiveSet));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((SetUserActiveResult)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * UserActiveSet.GetHashCode();
+                return hash;
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.15.2.0")]
+    public partial class SetUserActive_UserActiveSet_UserActiveSetPayload : global::System.IEquatable<SetUserActive_UserActiveSet_UserActiveSetPayload>, ISetUserActive_UserActiveSet_UserActiveSetPayload
+    {
+        public SetUserActive_UserActiveSet_UserActiveSetPayload(global::BlazorApp1.ISetUserActive_UserActiveSet_User? user)
+        {
+            User = user;
+        }
+
+        public global::BlazorApp1.ISetUserActive_UserActiveSet_User? User { get; }
+
+        public virtual global::System.Boolean Equals(SetUserActive_UserActiveSet_UserActiveSetPayload? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (((User is null && other.User is null) || User != null && User.Equals(other.User)));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((SetUserActive_UserActiveSet_UserActiveSetPayload)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (User != null)
+                {
+                    hash ^= 397 * User.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// The users of our application.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.15.2.0")]
+    public partial class SetUserActive_UserActiveSet_User_User : global::System.IEquatable<SetUserActive_UserActiveSet_User_User>, ISetUserActive_UserActiveSet_User_User
+    {
+        public SetUserActive_UserActiveSet_User_User(global::System.Boolean active)
+        {
+            Active = active;
+        }
+
+        /// <summary>
+        /// Is this user account active.
+        /// </summary>
+        public global::System.Boolean Active { get; }
+
+        public virtual global::System.Boolean Equals(SetUserActive_UserActiveSet_User_User? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (Active == other.Active);
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((SetUserActive_UserActiveSet_User_User)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * Active.GetHashCode();
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// GraphQL mutations.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.15.2.0")]
+    public partial interface ISetUserActiveResult
+    {
+        /// <summary>
+        /// Activate/deactivate user with provided user ID.
+        /// 
+        /// 
+        /// **Returns:**
+        /// Updated user.
+        /// </summary>
+        public global::BlazorApp1.ISetUserActive_UserActiveSet UserActiveSet { get; }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.15.2.0")]
+    public partial interface ISetUserActive_UserActiveSet
+    {
+        public global::BlazorApp1.ISetUserActive_UserActiveSet_User? User { get; }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.15.2.0")]
+    public partial interface ISetUserActive_UserActiveSet_UserActiveSetPayload : ISetUserActive_UserActiveSet
+    {
+    }
+
+    /// <summary>
+    /// The users of our application.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.15.2.0")]
+    public partial interface ISetUserActive_UserActiveSet_User
+    {
+        /// <summary>
+        /// Is this user account active.
+        /// </summary>
+        public global::System.Boolean Active { get; }
+    }
+
+    /// <summary>
+    /// The users of our application.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.15.2.0")]
+    public partial interface ISetUserActive_UserActiveSet_User_User : ISetUserActive_UserActiveSet_User
+    {
+    }
+
+    /// <summary>
+    /// GraphQL mutations.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.15.2.0")]
     public partial class SetUserAdminResult : global::System.IEquatable<SetUserAdminResult>, ISetUserAdminResult
     {
         public SetUserAdminResult(global::BlazorApp1.ISetUserAdmin_UserAdminSet userAdminSet)
@@ -947,6 +1197,140 @@ namespace BlazorApp1
     }
 
     /// <summary>
+    /// Represents the operation service of the SetUserActive GraphQL operation
+    /// <code>
+    /// mutation SetUserActive($userId: Int!, $active: Boolean!) {
+    ///   userActiveSet(input: { userId: $userId, active: $active }) {
+    ///     __typename
+    ///     user {
+    ///       __typename
+    ///       active
+    ///       ... on User {
+    ///         id
+    ///       }
+    ///     }
+    ///   }
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.15.2.0")]
+    public partial class SetUserActiveMutationDocument : global::StrawberryShake.IDocument
+    {
+        private SetUserActiveMutationDocument()
+        {
+        }
+
+        public static SetUserActiveMutationDocument Instance { get; } = new SetUserActiveMutationDocument();
+        public global::StrawberryShake.OperationKind Kind => global::StrawberryShake.OperationKind.Mutation;
+        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x6d, 0x75, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x20, 0x53, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x41, 0x63, 0x74, 0x69, 0x76, 0x65, 0x28, 0x24, 0x75, 0x73, 0x65, 0x72, 0x49, 0x64, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x21, 0x2c, 0x20, 0x24, 0x61, 0x63, 0x74, 0x69, 0x76, 0x65, 0x3a, 0x20, 0x42, 0x6f, 0x6f, 0x6c, 0x65, 0x61, 0x6e, 0x21, 0x29, 0x20, 0x7b, 0x20, 0x75, 0x73, 0x65, 0x72, 0x41, 0x63, 0x74, 0x69, 0x76, 0x65, 0x53, 0x65, 0x74, 0x28, 0x69, 0x6e, 0x70, 0x75, 0x74, 0x3a, 0x20, 0x7b, 0x20, 0x75, 0x73, 0x65, 0x72, 0x49, 0x64, 0x3a, 0x20, 0x24, 0x75, 0x73, 0x65, 0x72, 0x49, 0x64, 0x2c, 0x20, 0x61, 0x63, 0x74, 0x69, 0x76, 0x65, 0x3a, 0x20, 0x24, 0x61, 0x63, 0x74, 0x69, 0x76, 0x65, 0x20, 0x7d, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x75, 0x73, 0x65, 0x72, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x61, 0x63, 0x74, 0x69, 0x76, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x55, 0x73, 0x65, 0x72, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d};
+        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "494114fb66dfa5e1682c032f3fc69471");
+        public override global::System.String ToString()
+        {
+#if NETSTANDARD2_0
+        return global::System.Text.Encoding.UTF8.GetString(Body.ToArray());
+#else
+            return global::System.Text.Encoding.UTF8.GetString(Body);
+#endif
+        }
+    }
+
+    /// <summary>
+    /// Represents the operation service of the SetUserActive GraphQL operation
+    /// <code>
+    /// mutation SetUserActive($userId: Int!, $active: Boolean!) {
+    ///   userActiveSet(input: { userId: $userId, active: $active }) {
+    ///     __typename
+    ///     user {
+    ///       __typename
+    ///       active
+    ///       ... on User {
+    ///         id
+    ///       }
+    ///     }
+    ///   }
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.15.2.0")]
+    public partial class SetUserActiveMutation : global::BlazorApp1.ISetUserActiveMutation
+    {
+        private readonly global::StrawberryShake.IOperationExecutor<ISetUserActiveResult> _operationExecutor;
+        private readonly global::StrawberryShake.Serialization.IInputValueFormatter _intFormatter;
+        private readonly global::StrawberryShake.Serialization.IInputValueFormatter _booleanFormatter;
+        public SetUserActiveMutation(global::StrawberryShake.IOperationExecutor<ISetUserActiveResult> operationExecutor, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _operationExecutor = operationExecutor ?? throw new global::System.ArgumentNullException(nameof(operationExecutor));
+            _intFormatter = serializerResolver.GetInputValueFormatter("Int");
+            _booleanFormatter = serializerResolver.GetInputValueFormatter("Boolean");
+        }
+
+        global::System.Type global::StrawberryShake.IOperationRequestFactory.ResultType => typeof(ISetUserActiveResult);
+        public async global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<ISetUserActiveResult>> ExecuteAsync(global::System.Int32 userId, global::System.Boolean active, global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var request = CreateRequest(userId, active);
+            return await _operationExecutor.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        public global::System.IObservable<global::StrawberryShake.IOperationResult<ISetUserActiveResult>> Watch(global::System.Int32 userId, global::System.Boolean active, global::StrawberryShake.ExecutionStrategy? strategy = null)
+        {
+            var request = CreateRequest(userId, active);
+            return _operationExecutor.Watch(request, strategy);
+        }
+
+        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Int32 userId, global::System.Boolean active)
+        {
+            var variables = new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>();
+            variables.Add("userId", FormatUserId(userId));
+            variables.Add("active", FormatActive(active));
+            return CreateRequest(variables);
+        }
+
+        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
+        {
+            return new global::StrawberryShake.OperationRequest(id: SetUserActiveMutationDocument.Instance.Hash.Value, name: "SetUserActive", document: SetUserActiveMutationDocument.Instance, strategy: global::StrawberryShake.RequestStrategy.Default, variables: variables);
+        }
+
+        private global::System.Object? FormatUserId(global::System.Int32 value)
+        {
+            return _intFormatter.Format(value);
+        }
+
+        private global::System.Object? FormatActive(global::System.Boolean value)
+        {
+            return _booleanFormatter.Format(value);
+        }
+
+        global::StrawberryShake.OperationRequest global::StrawberryShake.IOperationRequestFactory.Create(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
+        {
+            return CreateRequest(variables!);
+        }
+    }
+
+    /// <summary>
+    /// Represents the operation service of the SetUserActive GraphQL operation
+    /// <code>
+    /// mutation SetUserActive($userId: Int!, $active: Boolean!) {
+    ///   userActiveSet(input: { userId: $userId, active: $active }) {
+    ///     __typename
+    ///     user {
+    ///       __typename
+    ///       active
+    ///       ... on User {
+    ///         id
+    ///       }
+    ///     }
+    ///   }
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.15.2.0")]
+    public partial interface ISetUserActiveMutation : global::StrawberryShake.IOperationRequestFactory
+    {
+        global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<ISetUserActiveResult>> ExecuteAsync(global::System.Int32 userId, global::System.Boolean active, global::System.Threading.CancellationToken cancellationToken = default);
+        global::System.IObservable<global::StrawberryShake.IOperationResult<ISetUserActiveResult>> Watch(global::System.Int32 userId, global::System.Boolean active, global::StrawberryShake.ExecutionStrategy? strategy = null);
+    }
+
+    /// <summary>
     /// Represents the operation service of the SetUserAdmin GraphQL operation
     /// <code>
     /// mutation SetUserAdmin($userId: Int!, $admin: Boolean!) {
@@ -1088,17 +1472,20 @@ namespace BlazorApp1
     {
         private readonly global::BlazorApp1.IGetAllUsersQuery _getAllUsers;
         private readonly global::BlazorApp1.IGetUsersStartingWithQuery _getUsersStartingWith;
+        private readonly global::BlazorApp1.ISetUserActiveMutation _setUserActive;
         private readonly global::BlazorApp1.ISetUserAdminMutation _setUserAdmin;
-        public AdminClient(global::BlazorApp1.IGetAllUsersQuery getAllUsers, global::BlazorApp1.IGetUsersStartingWithQuery getUsersStartingWith, global::BlazorApp1.ISetUserAdminMutation setUserAdmin)
+        public AdminClient(global::BlazorApp1.IGetAllUsersQuery getAllUsers, global::BlazorApp1.IGetUsersStartingWithQuery getUsersStartingWith, global::BlazorApp1.ISetUserActiveMutation setUserActive, global::BlazorApp1.ISetUserAdminMutation setUserAdmin)
         {
             _getAllUsers = getAllUsers ?? throw new global::System.ArgumentNullException(nameof(getAllUsers));
             _getUsersStartingWith = getUsersStartingWith ?? throw new global::System.ArgumentNullException(nameof(getUsersStartingWith));
+            _setUserActive = setUserActive ?? throw new global::System.ArgumentNullException(nameof(setUserActive));
             _setUserAdmin = setUserAdmin ?? throw new global::System.ArgumentNullException(nameof(setUserAdmin));
         }
 
         public static global::System.String ClientName => "AdminClient";
         public global::BlazorApp1.IGetAllUsersQuery GetAllUsers => _getAllUsers;
         public global::BlazorApp1.IGetUsersStartingWithQuery GetUsersStartingWith => _getUsersStartingWith;
+        public global::BlazorApp1.ISetUserActiveMutation SetUserActive => _setUserActive;
         public global::BlazorApp1.ISetUserAdminMutation SetUserAdmin => _setUserAdmin;
     }
 
@@ -1111,6 +1498,8 @@ namespace BlazorApp1
         global::BlazorApp1.IGetAllUsersQuery GetAllUsers { get; }
 
         global::BlazorApp1.IGetUsersStartingWithQuery GetUsersStartingWith { get; }
+
+        global::BlazorApp1.ISetUserActiveMutation SetUserActive { get; }
 
         global::BlazorApp1.ISetUserAdminMutation SetUserAdmin { get; }
     }
@@ -1360,6 +1749,118 @@ namespace BlazorApp1.State
             }
 
             return new GetUsersStartingWith_Users_User(entity.Id, entity.FirstName, entity.Email, entity.Active, entity.Admin);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.15.2.0")]
+    public partial class SetUserActiveResultFactory : global::StrawberryShake.IOperationResultDataFactory<global::BlazorApp1.SetUserActiveResult>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        private readonly global::StrawberryShake.IEntityMapper<global::BlazorApp1.State.UserEntity, SetUserActive_UserActiveSet_User_User> _setUserActive_UserActiveSet_User_UserFromUserEntityMapper;
+        public SetUserActiveResultFactory(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityMapper<global::BlazorApp1.State.UserEntity, SetUserActive_UserActiveSet_User_User> setUserActive_UserActiveSet_User_UserFromUserEntityMapper)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+            _setUserActive_UserActiveSet_User_UserFromUserEntityMapper = setUserActive_UserActiveSet_User_UserFromUserEntityMapper ?? throw new global::System.ArgumentNullException(nameof(setUserActive_UserActiveSet_User_UserFromUserEntityMapper));
+        }
+
+        global::System.Type global::StrawberryShake.IOperationResultDataFactory.ResultType => typeof(global::BlazorApp1.ISetUserActiveResult);
+        public SetUserActiveResult Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot = null)
+        {
+            if (snapshot is null)
+            {
+                snapshot = _entityStore.CurrentSnapshot;
+            }
+
+            if (dataInfo is SetUserActiveResultInfo info)
+            {
+                return new SetUserActiveResult(MapNonNullableISetUserActive_UserActiveSet(info.UserActiveSet, snapshot));
+            }
+
+            throw new global::System.ArgumentException("SetUserActiveResultInfo expected.");
+        }
+
+        private global::BlazorApp1.ISetUserActive_UserActiveSet MapNonNullableISetUserActive_UserActiveSet(global::BlazorApp1.State.UserActiveSetPayloadData data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            ISetUserActive_UserActiveSet returnValue = default !;
+            if (data.__typename.Equals("UserActiveSetPayload", global::System.StringComparison.Ordinal))
+            {
+                returnValue = new SetUserActive_UserActiveSet_UserActiveSetPayload(MapISetUserActive_UserActiveSet_User(data.User, snapshot));
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        private global::BlazorApp1.ISetUserActive_UserActiveSet_User? MapISetUserActive_UserActiveSet_User(global::StrawberryShake.EntityId? entityId, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (entityId is null)
+            {
+                return null;
+            }
+
+            if (entityId.Value.Name.Equals("User", global::System.StringComparison.Ordinal))
+            {
+                return _setUserActive_UserActiveSet_User_UserFromUserEntityMapper.Map(snapshot.GetEntity<global::BlazorApp1.State.UserEntity>(entityId.Value) ?? throw new global::StrawberryShake.GraphQLClientException());
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        global::System.Object global::StrawberryShake.IOperationResultDataFactory.Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot)
+        {
+            return Create(dataInfo, snapshot);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.15.2.0")]
+    public partial class SetUserActiveResultInfo : global::StrawberryShake.IOperationResultDataInfo
+    {
+        private readonly global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> _entityIds;
+        private readonly global::System.UInt64 _version;
+        public SetUserActiveResultInfo(global::BlazorApp1.State.UserActiveSetPayloadData userActiveSet, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
+        {
+            UserActiveSet = userActiveSet;
+            _entityIds = entityIds ?? throw new global::System.ArgumentNullException(nameof(entityIds));
+            _version = version;
+        }
+
+        /// <summary>
+        /// Activate/deactivate user with provided user ID.
+        /// 
+        /// 
+        /// **Returns:**
+        /// Updated user.
+        /// </summary>
+        public global::BlazorApp1.State.UserActiveSetPayloadData UserActiveSet { get; }
+
+        public global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> EntityIds => _entityIds;
+        public global::System.UInt64 Version => _version;
+        public global::StrawberryShake.IOperationResultDataInfo WithVersion(global::System.UInt64 version)
+        {
+            return new SetUserActiveResultInfo(UserActiveSet, _entityIds, version);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.15.2.0")]
+    public partial class SetUserActive_UserActiveSet_User_UserFromUserEntityMapper : global::StrawberryShake.IEntityMapper<global::BlazorApp1.State.UserEntity, SetUserActive_UserActiveSet_User_User>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        public SetUserActive_UserActiveSet_User_UserFromUserEntityMapper(global::StrawberryShake.IEntityStore entityStore)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+        }
+
+        public SetUserActive_UserActiveSet_User_User Map(global::BlazorApp1.State.UserEntity entity, global::StrawberryShake.IEntityStoreSnapshot? snapshot = null)
+        {
+            if (snapshot is null)
+            {
+                snapshot = _entityStore.CurrentSnapshot;
+            }
+
+            return new SetUserActive_UserActiveSet_User_User(entity.Active);
         }
     }
 
@@ -1770,6 +2271,131 @@ namespace BlazorApp1.State
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.15.2.0")]
+    public partial class SetUserActiveBuilder : global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::BlazorApp1.ISetUserActiveResult>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        private readonly global::StrawberryShake.IEntityIdSerializer _idSerializer;
+        private readonly global::StrawberryShake.IOperationResultDataFactory<global::BlazorApp1.ISetUserActiveResult> _resultDataFactory;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Int32, global::System.Int32> _intParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Boolean, global::System.Boolean> _booleanParser;
+        public SetUserActiveBuilder(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityIdSerializer idSerializer, global::StrawberryShake.IOperationResultDataFactory<global::BlazorApp1.ISetUserActiveResult> resultDataFactory, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+            _idSerializer = idSerializer ?? throw new global::System.ArgumentNullException(nameof(idSerializer));
+            _resultDataFactory = resultDataFactory ?? throw new global::System.ArgumentNullException(nameof(resultDataFactory));
+            _intParser = serializerResolver.GetLeafValueParser<global::System.Int32, global::System.Int32>("Int") ?? throw new global::System.ArgumentException("No serializer for type `Int` found.");
+            _booleanParser = serializerResolver.GetLeafValueParser<global::System.Boolean, global::System.Boolean>("Boolean") ?? throw new global::System.ArgumentException("No serializer for type `Boolean` found.");
+        }
+
+        public global::StrawberryShake.IOperationResult<ISetUserActiveResult> Build(global::StrawberryShake.Response<global::System.Text.Json.JsonDocument> response)
+        {
+            (ISetUserActiveResult Result, SetUserActiveResultInfo Info)? data = null;
+            global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.IClientError>? errors = null;
+            if (response.Exception is null)
+            {
+                try
+                {
+                    if (response.Body != null)
+                    {
+                        if (response.Body.RootElement.TryGetProperty("data", out global::System.Text.Json.JsonElement dataElement) && dataElement.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                        {
+                            data = BuildData(dataElement);
+                        }
+
+                        if (response.Body.RootElement.TryGetProperty("errors", out global::System.Text.Json.JsonElement errorsElement))
+                        {
+                            errors = global::StrawberryShake.Json.JsonErrorParser.ParseErrors(errorsElement);
+                        }
+                    }
+                }
+                catch (global::System.Exception ex)
+                {
+                    errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(ex.Message, exception: ex, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
+                }
+            }
+            else
+            {
+                if (response.Body != null && response.Body.RootElement.TryGetProperty("errors", out global::System.Text.Json.JsonElement errorsElement))
+                {
+                    errors = global::StrawberryShake.Json.JsonErrorParser.ParseErrors(errorsElement);
+                }
+                else
+                {
+                    errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(response.Exception.Message, exception: response.Exception, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
+                }
+            }
+
+            return new global::StrawberryShake.OperationResult<ISetUserActiveResult>(data?.Result, data?.Info, _resultDataFactory, errors);
+        }
+
+        private (ISetUserActiveResult, SetUserActiveResultInfo) BuildData(global::System.Text.Json.JsonElement obj)
+        {
+            var entityIds = new global::System.Collections.Generic.HashSet<global::StrawberryShake.EntityId>();
+            global::StrawberryShake.IEntityStoreSnapshot snapshot = default !;
+            global::BlazorApp1.State.UserActiveSetPayloadData userActiveSetId = default !;
+            _entityStore.Update(session =>
+            {
+                userActiveSetId = DeserializeNonNullableISetUserActive_UserActiveSet(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "userActiveSet"), entityIds);
+                snapshot = session.CurrentSnapshot;
+            });
+            var resultInfo = new SetUserActiveResultInfo(userActiveSetId, entityIds, snapshot.Version);
+            return (_resultDataFactory.Create(resultInfo), resultInfo);
+        }
+
+        private global::BlazorApp1.State.UserActiveSetPayloadData DeserializeNonNullableISetUserActive_UserActiveSet(global::StrawberryShake.IEntityStoreUpdateSession session, global::System.Text.Json.JsonElement? obj, global::System.Collections.Generic.ISet<global::StrawberryShake.EntityId> entityIds)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("UserActiveSetPayload", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::BlazorApp1.State.UserActiveSetPayloadData(typename, user: UpdateISetUserActive_UserActiveSet_UserEntity(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "user"), entityIds));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::StrawberryShake.EntityId? UpdateISetUserActive_UserActiveSet_UserEntity(global::StrawberryShake.IEntityStoreUpdateSession session, global::System.Text.Json.JsonElement? obj, global::System.Collections.Generic.ISet<global::StrawberryShake.EntityId> entityIds)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            global::StrawberryShake.EntityId entityId = _idSerializer.Parse(obj.Value);
+            entityIds.Add(entityId);
+            if (entityId.Name.Equals("User", global::System.StringComparison.Ordinal))
+            {
+                if (session.CurrentSnapshot.TryGetEntity(entityId, out global::BlazorApp1.State.UserEntity? entity))
+                {
+                    session.SetEntity(entityId, new global::BlazorApp1.State.UserEntity(entity.Id, entity.Email, DeserializeNonNullableBoolean(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "active")), entity.Admin, entity.FirstName));
+                }
+                else
+                {
+                    session.SetEntity(entityId, new global::BlazorApp1.State.UserEntity(default !, default !, DeserializeNonNullableBoolean(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "active")), default !, default !));
+                }
+
+                return entityId;
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Boolean DeserializeNonNullableBoolean(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _booleanParser.Parse(obj.Value.GetBoolean()!);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.15.2.0")]
     public partial class SetUserAdminBuilder : global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::BlazorApp1.ISetUserAdminResult>
     {
         private readonly global::StrawberryShake.IEntityStore _entityStore;
@@ -1895,6 +2521,20 @@ namespace BlazorApp1.State
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.15.2.0")]
+    public partial class UserActiveSetPayloadData
+    {
+        public UserActiveSetPayloadData(global::System.String __typename, global::StrawberryShake.EntityId? user = default !)
+        {
+            this.__typename = __typename ?? throw new global::System.ArgumentNullException(nameof(__typename));
+            User = user;
+        }
+
+        public global::System.String __typename { get; }
+
+        public global::StrawberryShake.EntityId? User { get; }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.15.2.0")]
     public partial class UserAdminSetPayloadData
     {
         public UserAdminSetPayloadData(global::System.String __typename, global::StrawberryShake.EntityId? user = default !)
@@ -1973,6 +2613,7 @@ namespace Microsoft.Extensions.DependencyInjection
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => new global::BlazorApp1.State.AdminClientStoreAccessor(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationStore>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IEntityStore>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IEntityIdSerializer>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::System.Collections.Generic.IEnumerable<global::StrawberryShake.IOperationRequestFactory>>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::System.Collections.Generic.IEnumerable<global::StrawberryShake.IOperationResultDataFactory>>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp))));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::BlazorApp1.GetAllUsersQuery>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::BlazorApp1.GetUsersStartingWithQuery>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::BlazorApp1.SetUserActiveMutation>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::BlazorApp1.SetUserAdminMutation>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::BlazorApp1.AdminClient>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::BlazorApp1.IAdminClient>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
@@ -1990,6 +2631,7 @@ namespace Microsoft.Extensions.DependencyInjection
             });
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IEntityMapper<global::BlazorApp1.State.UserEntity, global::BlazorApp1.GetAllUsers_Users_User>, global::BlazorApp1.State.GetAllUsers_Users_UserFromUserEntityMapper>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IEntityMapper<global::BlazorApp1.State.UserEntity, global::BlazorApp1.GetUsersStartingWith_Users_User>, global::BlazorApp1.State.GetUsersStartingWith_Users_UserFromUserEntityMapper>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IEntityMapper<global::BlazorApp1.State.UserEntity, global::BlazorApp1.SetUserActive_UserActiveSet_User_User>, global::BlazorApp1.State.SetUserActive_UserActiveSet_User_UserFromUserEntityMapper>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IEntityMapper<global::BlazorApp1.State.UserEntity, global::BlazorApp1.SetUserAdmin_UserAdminSet_User_User>, global::BlazorApp1.State.SetUserAdmin_UserAdminSet_User_UserFromUserEntityMapper>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StrawberryShake.Serialization.StringSerializer>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StrawberryShake.Serialization.BooleanSerializer>(services);
@@ -2022,6 +2664,13 @@ namespace Microsoft.Extensions.DependencyInjection
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationExecutor<global::BlazorApp1.IGetUsersStartingWithResult>>(services, sp => new global::StrawberryShake.OperationExecutor<global::System.Text.Json.JsonDocument, global::BlazorApp1.IGetUsersStartingWithResult>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.Transport.Http.IHttpConnection>(sp), () => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::BlazorApp1.IGetUsersStartingWithResult>>(sp), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationStore>(sp), strategy));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::BlazorApp1.GetUsersStartingWithQuery>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::BlazorApp1.IGetUsersStartingWithQuery>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::BlazorApp1.GetUsersStartingWithQuery>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory<global::BlazorApp1.ISetUserActiveResult>, global::BlazorApp1.State.SetUserActiveResultFactory>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultDataFactory<global::BlazorApp1.ISetUserActiveResult>>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationRequestFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::BlazorApp1.ISetUserActiveMutation>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::BlazorApp1.ISetUserActiveResult>, global::BlazorApp1.State.SetUserActiveBuilder>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationExecutor<global::BlazorApp1.ISetUserActiveResult>>(services, sp => new global::StrawberryShake.OperationExecutor<global::System.Text.Json.JsonDocument, global::BlazorApp1.ISetUserActiveResult>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.Transport.Http.IHttpConnection>(sp), () => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::BlazorApp1.ISetUserActiveResult>>(sp), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationStore>(sp), strategy));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::BlazorApp1.SetUserActiveMutation>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::BlazorApp1.ISetUserActiveMutation>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::BlazorApp1.SetUserActiveMutation>(sp));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory<global::BlazorApp1.ISetUserAdminResult>, global::BlazorApp1.State.SetUserAdminResultFactory>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultDataFactory<global::BlazorApp1.ISetUserAdminResult>>(sp));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationRequestFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::BlazorApp1.ISetUserAdminMutation>(sp));

@@ -33,7 +33,7 @@ else
                 <td>@user.FirstName</td>
                 <td>@user.Email</td>
                 <td>
-                    <DemoButton Primary="user.Active" OnClick="() => Console.WriteLine(true)">
+                    <DemoButton Primary="user.Active" OnClick="() => ToggleActive(user.Id, user.Active)">
                         @user.Active.ToString()
                     </DemoButton>
                 </td>
@@ -65,6 +65,16 @@ else
         var curUser = _users![index];
         _users[index] = new GetUsersStartingWith_Users_User(curUser.Id, curUser.FirstName, curUser.Email, 
             curUser.Active, result.Data.UserAdminSet.User.Admin);
+    }
+
+    private async Task ToggleActive(int userId, bool currentActive)
+    {
+        var result = await AdminClient.SetUserActive.ExecuteAsync(userId, !currentActive);
+        if (result.Data?.UserActiveSet.User is null) return;
+        var index = Array.FindIndex(_users!, x => x.Id == userId);
+        var curUser = _users![index];
+        _users[index] = new GetUsersStartingWith_Users_User(curUser.Id, curUser.FirstName, curUser.Email, 
+            result.Data.UserActiveSet.User.Active, curUser.Admin);
     }
 
 }

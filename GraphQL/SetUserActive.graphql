@@ -1,0 +1,7 @@
+mutation SetUserActive($userId: Int!, $active: Boolean!) {
+  userActiveSet(input: { userId: $userId, active: $active }) {
+    user {
+      active
+    }
+  }
+}
