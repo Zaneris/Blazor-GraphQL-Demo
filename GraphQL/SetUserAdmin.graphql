@@ -1,0 +1,7 @@
+mutation SetUserAdmin($userId: Int!, $admin: Boolean!) {
+  userAdminSet(input: { userId: $userId, admin: $admin }) {
+    user {
+      admin
+    }
+  }
+}

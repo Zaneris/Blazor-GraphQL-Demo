@@ -38,7 +38,7 @@ else
                     </DemoButton>
                 </td>
                 <td>
-                    <DemoButton Primary="user.Admin">
+                    <DemoButton Primary="user.Admin" OnClick="() => ToggleAdmin(user.Id, user.Admin)">
                         @user.Admin.ToString()
                     </DemoButton>
                 </td>
@@ -55,6 +55,16 @@ else
     {
         var result = await AdminClient.GetUsersStartingWith.ExecuteAsync("S");
         _users = result.Data?.Users.ToArray();
+    }
+
+    private async Task ToggleAdmin(int userId, bool currentAdmin)
+    {
+        var result = await AdminClient.SetUserAdmin.ExecuteAsync(userId, !currentAdmin);
+        if (result.Data?.UserAdminSet.User is null) return;
+        var index = Array.FindIndex(_users!, x => x.Id == userId);
+        var curUser = _users![index];
+        _users[index] = new GetUsersStartingWith_Users_User(curUser.Id, curUser.FirstName, curUser.Email, 
+            curUser.Active, result.Data.UserAdminSet.User.Admin);
     }
 
 }
