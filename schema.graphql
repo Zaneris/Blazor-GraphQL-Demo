@@ -1,0 +1,160 @@
+﻿schema {
+  query: Query
+  mutation: Mutation
+}
+
+"GraphQL queries."
+type Query {
+  "Get any and all users, supports filtering and sorting.\n\n\n**Returns:**\nList of users."
+  users(where: UserFilterInput order: [UserSortInput!]): [User!]!
+}
+
+"GraphQL mutations."
+type Mutation {
+  "Activate\/deactivate user with provided user ID.\n\n\n**Returns:**\nUpdated user."
+  userActiveSet(input: UserActiveSetInput!): UserActiveSetPayload!
+  "Enable\/disable admin for user with provided user ID.\n\n\n**Returns:**\nUpdated user."
+  userAdminSet(input: UserAdminSetInput!): UserAdminSetPayload!
+}
+
+"The users of our application."
+input UserFilterInput {
+  and: [UserFilterInput!]
+  or: [UserFilterInput!]
+  "Primary key."
+  id: ComparableInt32OperationFilterInput
+  "Legal first name."
+  firstName: StringOperationFilterInput
+  "Legal last name(s)."
+  lastName: StringOperationFilterInput
+  "Valid email address."
+  email: StringOperationFilterInput
+  "Is this user account active."
+  active: BooleanOperationFilterInput
+  "Is this user an admin."
+  admin: BooleanOperationFilterInput
+  "User created DateTime in UTC."
+  createdDate: ComparableDateTimeOperationFilterInput
+  "DateTime this information was last modified in UTC."
+  lastModified: ComparableDateTimeOperationFilterInput
+}
+
+"The users of our application."
+input UserSortInput {
+  "Primary key."
+  id: SortEnumType
+  "Legal first name."
+  firstName: SortEnumType
+  "Legal last name(s)."
+  lastName: SortEnumType
+  "Valid email address."
+  email: SortEnumType
+  "Is this user account active."
+  active: SortEnumType
+  "Is this user an admin."
+  admin: SortEnumType
+  "User created DateTime in UTC."
+  createdDate: SortEnumType
+  "DateTime this information was last modified in UTC."
+  lastModified: SortEnumType
+}
+
+input ComparableInt32OperationFilterInput {
+  eq: Int
+  neq: Int
+  in: [Int!]
+  nin: [Int!]
+  gt: Int
+  ngt: Int
+  gte: Int
+  ngte: Int
+  lt: Int
+  nlt: Int
+  lte: Int
+  nlte: Int
+}
+
+input StringOperationFilterInput {
+  and: [StringOperationFilterInput!]
+  or: [StringOperationFilterInput!]
+  eq: String
+  neq: String
+  contains: String
+  ncontains: String
+  in: [String]
+  nin: [String]
+  startsWith: String
+  nstartsWith: String
+  endsWith: String
+  nendsWith: String
+}
+
+input BooleanOperationFilterInput {
+  eq: Boolean
+  neq: Boolean
+}
+
+input ComparableDateTimeOperationFilterInput {
+  eq: DateTime
+  neq: DateTime
+  in: [DateTime!]
+  nin: [DateTime!]
+  gt: DateTime
+  ngt: DateTime
+  gte: DateTime
+  ngte: DateTime
+  lt: DateTime
+  nlt: DateTime
+  lte: DateTime
+  nlte: DateTime
+}
+
+enum SortEnumType {
+  ASC
+  DESC
+}
+
+"The `DateTime` scalar represents an ISO-8601 compliant date time type."
+scalar DateTime
+
+"The users of our application."
+type User {
+  "Primary key."
+  id: Int!
+  "Legal first name."
+  firstName: String!
+  "Legal last name(s)."
+  lastName: String!
+  "Valid email address."
+  email: String!
+  "Is this user account active."
+  active: Boolean!
+  "Is this user an admin."
+  admin: Boolean!
+  "User created DateTime in UTC."
+  createdDate: DateTime!
+  "DateTime this information was last modified in UTC."
+  lastModified: DateTime!
+}
+
+input UserActiveSetInput {
+  "User to activate."
+  userId: Int!
+  "Set user active to true\/false."
+  active: Boolean!
+}
+
+type UserActiveSetPayload {
+  user: User
+}
+
+input UserAdminSetInput {
+  "User to enable admin for."
+  userId: Int!
+  "Set user admin to true\/false."
+  admin: Boolean!
+}
+
+type UserAdminSetPayload {
+  user: User
+}
