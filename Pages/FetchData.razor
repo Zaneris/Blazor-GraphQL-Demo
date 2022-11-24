@@ -19,6 +19,7 @@ else
         <thead>
         <tr>
             <th>User ID</th>
+            <th>First Name</th>
             <th>Email</th>
             <th>Active</th>
             <th>Admin</th>
@@ -29,6 +30,7 @@ else
         {
             <tr>
                 <td>@user.Id</td>
+                <td>@user.FirstName</td>
                 <td>@user.Email</td>
                 <td>
                     <DemoButton Primary="user.Active" OnClick="() => Console.WriteLine(true)">
@@ -47,11 +49,11 @@ else
 }
 
 @code {
-    private IGetAllUsers_Users[]? _users;
+    private IGetUsersStartingWith_Users[]? _users;
 
     protected override async Task OnInitializedAsync()
     {
-        var result = await AdminClient.GetAllUsers.ExecuteAsync();
+        var result = await AdminClient.GetUsersStartingWith.ExecuteAsync("S");
         _users = result.Data?.Users.ToArray();
     }
 

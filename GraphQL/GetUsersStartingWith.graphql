@@ -1,0 +1,14 @@
+query GetUsersStartingWith($prefix: String) {
+  users(
+    where: {
+      and: [{ firstName: {startsWith: $prefix}}]
+    },
+    order: [{ firstName: ASC }]
+  ) {
+    id,
+    firstName,
+    email,
+    active,
+    admin
+  }
+}
