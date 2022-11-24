@@ -1,0 +1,19 @@
+﻿<button type="button" class="btn btn-outline-@ButtonStyle() btn-sm" @onclick="OnClick">
+    @ChildContent
+</button>
+
+@code {
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+    
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnClick { get; set; }
+    
+    [Parameter]
+    public bool Primary { get; set; }
+
+    private string ButtonStyle()
+    {
+        return Primary ? "success" : "danger";
+    }
+}
